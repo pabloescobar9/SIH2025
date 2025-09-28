@@ -1,0 +1,231 @@
+{
+  "id": "c5ebaaba-c27a-42ce-aecd-2f328cb198d9",
+  "prevId": "64a5b7f9-3759-4395-93e5-98a0f2177860",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.calculatedIndex": {
+      "name": "calculatedIndex",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "water_data_id": {
+          "name": "water_data_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "location_id": {
+          "name": "location_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "HPI": {
+          "name": "HPI",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "HEI": {
+          "name": "HEI",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "CF": {
+          "name": "CF",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "PLI": {
+          "name": "PLI",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "calculatedIndex_water_data_id_waterIndiexData_id_fk": {
+          "name": "calculatedIndex_water_data_id_waterIndiexData_id_fk",
+          "tableFrom": "calculatedIndex",
+          "tableTo": "waterIndiexData",
+          "columnsFrom": [
+            "water_data_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "calculatedIndex_location_id_waterIndiexLocation_id_fk": {
+          "name": "calculatedIndex_location_id_waterIndiexLocation_id_fk",
+          "tableFrom": "calculatedIndex",
+          "tableTo": "waterIndiexLocation",
+          "columnsFrom": [
+            "location_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.waterIndiexData": {
+      "name": "waterIndiexData",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "location_id": {
+          "name": "location_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pb": {
+          "name": "pb",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cd": {
+          "name": "cd",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "as": {
+          "name": "as",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hg": {
+          "name": "hg",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cr": {
+          "name": "cr",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "waterIndiexData_location_id_waterIndiexLocation_id_fk": {
+          "name": "waterIndiexData_location_id_waterIndiexLocation_id_fk",
+          "tableFrom": "waterIndiexData",
+          "tableTo": "waterIndiexLocation",
+          "columnsFrom": [
+            "location_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.waterIndiexLocation": {
+      "name": "waterIndiexLocation",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "site_id": {
+          "name": "site_id",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "latitude": {
+          "name": "latitude",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "longitude": {
+          "name": "longitude",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
