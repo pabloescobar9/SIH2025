@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Environmental Monitoring System Design System
+All colors MUST be HSL. Environmental theme with ocean blues and forest greens.
+*/
+
+@layer base {
+  :root {
+    /* Environmental Background System */
+    --background: 215 28% 97%;
+    --foreground: 215 25% 15%;
+
+    /* Card System */
+    --card: 215 30% 98%;
+    --card-foreground: 215 25% 15%;
+
+    /* Popover System */
+    --popover: 215 30% 98%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Environmental Primary - Deep Ocean Blue */
+    --primary: 217 91% 35%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 217 91% 60%;
+
+    /* Environmental Secondary - Forest Green */
+    --secondary: 162 93% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-glow: 162 80% 40%;
+
+    /* Muted Earth Tones */
+    --muted: 215 20% 92%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Environmental Accent - Bright Teal */
+    --accent: 188 95% 40%;
+    --accent-foreground: 210 40% 98%;
+    --accent-glow: 188 95% 65%;
+
+    /* Alert System */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Warning for pollution levels */
+    --warning: 45 93% 50%;
+    --warning-foreground: 215 25% 15%;
+
+    /* Success for safe levels */
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+
+    /* Interface Elements */
+    --border: 215 20% 88%;
+    --input: 215 20% 95%;
+    --ring: 217 91% 35%;
+
+    /* Environmental Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(217 91% 35%), hsl(188 95% 40%));
+    --gradient-forest: linear-gradient(135deg, hsl(162 93% 20%), hsl(142 76% 36%));
+    --gradient-subtle: linear-gradient(180deg, hsl(215 30% 98%), hsl(215 25% 95%));
+    --gradient-pollution: linear-gradient(90deg, hsl(142 76% 36%), hsl(45 93% 50%), hsl(0 84% 60%));
+
+    /* Environmental Shadows */
+    --shadow-ocean: 0 10px 30px -10px hsl(217 91% 35% / 0.3);
+    --shadow-forest: 0 10px 30px -10px hsl(162 93% 20% / 0.3);
+    --shadow-data: 0 4px 12px -2px hsl(215 25% 15% / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Environmental Theme */
+    --background: 215 35% 8%;
+    --foreground: 215 20% 85%;
+
+    --card: 215 30% 10%;
+    --card-foreground: 215 20% 85%;
+
+    --popover: 215 30% 10%;
+    --popover-foreground: 215 20% 85%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 215 35% 8%;
+    --primary-glow: 217 91% 75%;
+
+    --secondary: 162 70% 35%;
+    --secondary-foreground: 215 20% 85%;
+    --secondary-glow: 162 70% 50%;
+
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 15% 60%;
+
+    --accent: 188 95% 50%;
+    --accent-foreground: 215 35% 8%;
+    --accent-glow: 188 95% 70%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 215 20% 85%;
+
+    --warning: 45 93% 55%;
+    --warning-foreground: 215 35% 8%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 215 20% 85%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 18%;
+    --ring: 217 91% 60%;
+
+    /* Sidebar for dark mode */
+    --sidebar-background: 215 35% 6%;
+    --sidebar-foreground: 215 20% 80%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 215 35% 8%;
+    --sidebar-accent: 215 25% 12%;
+    --sidebar-accent-foreground: 215 20% 80%;
+    --sidebar-border: 215 25% 15%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
